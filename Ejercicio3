@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class Ejercicio3
+{
+    public static void main(String args[])
+    {
+        Scanner in=new Scanner(System.in);
+         
+         int a, b, i, j;
+        
+        System.out.println("Ingresa numero de filas:");
+        a = in.nextInt();
+       
+        System.out.println("Ingresa numero de columnas:");
+        b = in.nextInt();
+        
+        int matriz[][]=new int[a][b];
+       
+        System.out.println("Ingresa la matriz:");
+        
+          for(i=0;i<a;i++)
+        {
+              for(j=0;j<b;j++)
+              {
+                matriz[i][j] = in.nextInt();
+              }
+        }
+       
+        int x=0;
+        for(i=0;i<a;i++)
+        {
+            for(j=0;j<b;j++)
+            {
+                if((i==j && matriz[i][j]==1) || (i!=j && matriz[i][j]==0))
+                {
+                    x++;
+                }
+            }
+            
+        }
+        
+        if(x==a*b)
+        {
+            System.out.println("Es una Matriz identidad");
+        }
+        else
+        {
+            System.out.println("No es una Matriz identidad");
+        }
+        
+    }
+}
