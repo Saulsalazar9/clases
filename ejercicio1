@@ -1,0 +1,56 @@
+import java.util.Scanner;
+public class Ejercicio1
+{
+  public static void main(String args[])
+  {
+    int a, b, i, j;
+    
+    Scanner in = new Scanner(System.in);
+
+       System.out.println("Ingrese las dimensiones de las matrices");
+       
+       a = in.nextInt();
+       b = in.nextInt();
+
+       int M_1[][] = new int[a][b];
+       
+       int M_2[][] = new int[a][b];
+       
+       int M_3[][] = new int[a][b];
+       
+       int M_RESULTADO[][] = new int[a][b];
+       
+         System.out.println("ingrese los valores de la primera matriz");
+
+    for (i = 0; i < a; i++)
+      for (j = 0; j < b; j++)
+        M_1[i][j] = in.nextInt();
+
+         System.out.println("ingrese los valores de la segunda matriz");
+
+    for (i = 0 ; i < a; i++)
+      for (j = 0 ; j < b; j++)
+        M_2[i][j] = in.nextInt();
+
+        System.out.println("ingrese los valores de la raiz a multiplicar");
+
+    for (i = 0 ; i < a; i++)
+      for (j = 0 ; j < b; j++)
+        M_3[i][j] = in.nextInt();
+   
+   
+    for (i = 0; i < a; i++)
+      for (j = 0; j < b; j++)
+        M_RESULTADO[i][j] = ((M_1[i][j] + M_2[i][j]) * M_3[i][j]); 
+
+        System.out.println("El resultado es :");
+
+    for (i = 0; i < a; i++)
+         {
+            for (j = 0; j < b; j++)
+               System.out.print(M_RESULTADO[i][j] + "\t");
+
+         System.out.println();
+         }
+  }
+}
