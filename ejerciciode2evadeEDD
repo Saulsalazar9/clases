@@ -1,0 +1,93 @@
+/*Saul salazar CI:28570600*/
+
+import java.io.*;
+
+class Ejercicio
+        
+{
+
+   
+    public static void main(String[] args) {
+        File archivo;
+        FileWriter escribir;
+        PrintWriter linea;
+        String nombre="";
+        String apellido="";
+        String cedula="";
+        String promedio="";
+        String edad="";
+        String espacio=" ";
+        
+        archivo = new File("Estudiantes..txt");
+        
+        if (!archivo.exists())
+        {
+            try { 
+                archivo.createNewFile();
+               BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+               System.out.print("Introduce tu  nombre : ");
+                nombre= br.readLine();
+                System.out.print("Introduce tu apellido: ");
+                apellido=br.readLine();
+                System.out.print("introduce tu cedula: ");
+                cedula=br.readLine();
+                System.out.print("Introduce tu promedio: ");
+                promedio=br.readLine();
+                System.out.print("Introduce tu edad:");
+                edad=br.readLine();
+                System.out.print("");
+                espacio=br.readLine();
+                
+                
+                escribir = new FileWriter(archivo, true);
+                linea = new PrintWriter(escribir);
+                linea.println(espacio);
+                linea.print(nombre + "/");
+                linea.print(apellido + "/");
+                linea.print(cedula + "/");
+                linea.print(promedio + "/");
+                linea.print(edad + " " );
+                escribir.close();
+                
+                
+                
+            } catch (IOException e) {
+             
+            }
+        }else 
+        { try { 
+           
+               BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+               System.out.print("Introduce tu  nombre : ");
+                nombre= br.readLine();
+                System.out.print("Introduce tu apellido: ");
+                apellido=br.readLine();
+                System.out.print("introduce tu cedula: ");
+                cedula=br.readLine();
+                System.out.print("Introduce tu promedio: ");
+                promedio=br.readLine();
+                System.out.print("Introduce tu edad: ");
+                edad=br.readLine();
+                System.out.print("");
+                espacio=br.readLine();
+               
+                
+                escribir = new FileWriter(archivo, true);
+                linea = new PrintWriter(escribir);
+                linea.println(espacio);
+                linea.print(nombre + "/");
+                linea.print(apellido + "/");
+                linea.print(cedula + "/");
+                linea.print(promedio + "/");
+                linea.print(edad + " ");
+                escribir.close();
+                
+                
+                
+            } catch (IOException e) {
+             
+            }
+          } 
+        }
+    }
+    
